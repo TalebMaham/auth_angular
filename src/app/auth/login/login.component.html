@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h2 class="text-center">Login</h2>
+    <form (ngSubmit)="login()" class="mt-4">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          class="form-control" 
+          [(ngModel)]="username" 
+          name="username" 
+          required
+          placeholder="Enter your username"
+        >
+      </div>
+      
+      <div class="form-group mt-3">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          class="form-control" 
+          [(ngModel)]="password" 
+          name="password" 
+          required
+          placeholder="Enter your password"
+        >
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-4 w-100">Login</button>
+      
+      <p *ngIf="message" [ngClass]="{'text-success': loginSuccess, 'text-danger': !loginSuccess}" class="mt-3 text-center">
+        {{ message }}
+      </p>
+    </form>
+  </div>
+  
